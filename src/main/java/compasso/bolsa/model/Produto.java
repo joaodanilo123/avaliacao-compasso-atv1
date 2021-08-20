@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "produtos")
 public class Produto {
@@ -21,7 +22,7 @@ public class Produto {
     private int quantidade;
 	private BigDecimal preco;
 	private LocalDate dataCadastro = LocalDate.now();
-    private LocalDate dataAlteracao;
+    private LocalDate dataAlteracao = LocalDate.now();
 	
 	public Produto() {}
 	
@@ -89,14 +90,13 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return String.format("{ ID: %d\nNome: %s\nDescrição: %s\nPreço: %.2f\nQuantidade: %d\nCriado em: %t\nAlterado em: %t }", 
-			this.getId(),
+		return String.format("{Nome: %s, Descrição: %s, Preço: %.2f, Quantidade: %d, Criado em: %s, Alterado em: %s }", 
 			this.getNome(),
 			this.getDescricao(),
 			this.getPreco(),
 			this.getQuantidade(),
-			this.getDataCadastro(),
-			this.getDataAlteracao()
+			this.getDataCadastro().toString(),
+			this.getDataAlteracao().toString()
 		);
 	}
 
