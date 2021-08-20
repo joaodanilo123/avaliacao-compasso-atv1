@@ -26,7 +26,8 @@ public class ProdutoDAO {
     }
 
     public void deletar(Produto produto){
-
+        produto = entityManager.merge(produto);
+        entityManager.remove(produto);
     }
 
     public List<Produto> listar(){

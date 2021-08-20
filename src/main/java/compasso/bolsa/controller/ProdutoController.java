@@ -36,9 +36,15 @@ public class ProdutoController implements AutoCloseable {
         return dao.listar();
     }
 
+    public void deletar(Produto p){
+        entityManager.getTransaction().begin();
+        dao.deletar(p);
+        entityManager.getTransaction().commit();
+        entityManager.clear();
+    }
+
     public void close() {
         this.entityManager.close();
     }
-
 
 }
