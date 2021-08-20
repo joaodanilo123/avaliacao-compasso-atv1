@@ -60,7 +60,7 @@ public class Produto {
 	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -85,4 +85,20 @@ public class Produto {
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
+
+
+	@Override
+	public String toString() {
+		return String.format("{ ID: %d\nNome: %s\nDescrição: %s\nPreço: %.2f\nQuantidade: %d\nCriado em: %t\nAlterado em: %t }", 
+			this.getId(),
+			this.getNome(),
+			this.getDescricao(),
+			this.getPreco(),
+			this.getQuantidade(),
+			this.getDataCadastro(),
+			this.getDataAlteracao()
+		);
+	}
+
+
 }
