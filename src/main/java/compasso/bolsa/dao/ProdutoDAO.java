@@ -34,6 +34,10 @@ public class ProdutoDAO {
         List<Produto> produtos = new ArrayList<Produto>();
 
         return produtos;
-    }  
+    }
+    
+    public void limparTabela(){
+        entityManager.createQuery("DELETE FROM Produto").executeUpdate();
+    }
 
 }

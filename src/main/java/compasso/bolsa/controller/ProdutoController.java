@@ -16,6 +16,11 @@ public class ProdutoController implements AutoCloseable {
     public ProdutoController(){
         this.entityManager = Util.getEntityManager();
         this.dao = new ProdutoDAO(entityManager);
+
+        entityManager.getTransaction().begin();
+        dao.limparTabela();
+        entityManager.getTransaction().commit();
+        entityManager.clear();
     }
 
     public void cadastrar(Produto p){
