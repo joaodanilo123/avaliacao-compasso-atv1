@@ -9,7 +9,9 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean sair = false;
-
+        
+        try (FuncoesCLI cli = new FuncoesCLI()) {
+        
         System.out.println("\n\n\n CADASTRO DE PRODUTOS");
         System.out.println("-Este projeto foi configurado para MySQL");
         System.out.println("-Configure as credenciais do banco de dados no Arquivo src/main/resources/META-INF/persistence.xml");
@@ -25,7 +27,7 @@ public class App {
 
 
 
-        try (FuncoesCLI cli = new FuncoesCLI()) {
+        
 
             while (!sair) {
 
