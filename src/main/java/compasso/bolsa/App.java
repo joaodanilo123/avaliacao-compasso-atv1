@@ -14,20 +14,20 @@ public class App {
         System.out.println("-Este projeto foi configurado para MySQL");
         System.out.println("-Configure as credenciais do banco de dados no Arquivo src/main/resources/META-INF/persistence.xml");
         System.out.println("-Crie um banco de dados no MySQL chamado \"loja\" ( CREATE DATABASE loja ) ");
+        
+        System.out.println(
+                "Digite uma das opções:\n" +
+                "    0: Fechar aplicação\n"+
+                "    1: Cadastrar os 3 produtos\n"+
+                "    2: Atualizar o primeira produto cadastrado\n"+
+                "    3: Apagar o segundo produto cadastrado"
+            );
+
 
 
         try (FuncoesCLI cli = new FuncoesCLI()) {
 
             while (!sair) {
-                
-                System.out.println(
-                    "Digite uma das opções:\n" +
-                    "    0: Fechar aplicação\n"+
-                    "    1: Cadastrar os 3 produtos\n"+
-                    "    2: Atualizar o primeira produto cadastrado\n"+
-                    "    3: Apagar o segundo produto cadastrado"
-                );
-
 
                 String entrada = scanner.nextLine();
 
